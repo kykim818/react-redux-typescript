@@ -12,3 +12,4 @@ Typescript를 적용하기 위해서 @types/react-redux도 추가한다.
 
 $ yarn add react-redux @types/react-redux
 
+# 3. Action 과 Reducer 분리
