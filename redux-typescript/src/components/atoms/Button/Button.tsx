@@ -1,20 +1,29 @@
-import React from 'react';
-import styled from 'styled-components'
+import React from "react";
+import styled, {css} from "styled-components";
 
-const Button = (props : {children : React.ReactNode}) => {
-    return (
-        <ButtonWrapper>
-            {props.children}
-        </ButtonWrapper>
-    );
-
+interface buttonProps {
+  children?: React.ReactNode;
+  onClick?: (args: any) => any;
+  disabled?: boolean;
+  className?: string;
 }
-// BUTTON default style 제거
+const Button = (props: buttonProps) => {
+  return (
+    <ButtonWrapper
+      onClick={props.onClick}
+      className={props.className}
+      disabled={props.disabled}
+    >
+      {props.children}
+    </ButtonWrapper>
+  );
+};
 const ButtonWrapper = styled.button`
+  // BUTTON default style 제거
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  // 기본 속성  
+  // 기본 속성
   margin: 0;
   padding: 0.5rem 1rem;
 
@@ -30,10 +39,29 @@ const ButtonWrapper = styled.button`
   border: none;
   border-radius: 4px;
   // 그림자 속성
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   cursor: pointer;
   transition: 0.5s;
-
+  &:hover {
+    outline: 0;
+  }
+  // 색상
+  ${props => 
+    props.className === 'white' && 
+    css`
+    background-color  : white;
+    color: black;
+    `
+  }
+  ${props => 
+    props.className === 'black' && 
+    css`
+    background-color  : black;
+    color: white;
+    `
+  }
   
-`
-export default Button
+`;
+
+export default Button;
