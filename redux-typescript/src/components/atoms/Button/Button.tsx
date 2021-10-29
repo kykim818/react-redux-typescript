@@ -1,5 +1,5 @@
 import React from "react";
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 interface buttonProps {
   children?: React.ReactNode;
@@ -7,7 +7,7 @@ interface buttonProps {
   disabled?: boolean;
   className?: string;
 }
-const Button = (props: buttonProps) => {
+export const Button = (props: buttonProps) => {
   return (
     <ButtonWrapper
       onClick={props.onClick}
@@ -18,6 +18,7 @@ const Button = (props: buttonProps) => {
     </ButtonWrapper>
   );
 };
+// common style
 const ButtonWrapper = styled.button`
   // BUTTON default style 제거
   -webkit-appearance: none;
@@ -34,7 +35,9 @@ const ButtonWrapper = styled.button`
   text-decoration: none;
 
   display: inline-block;
-  width: auto;
+  width: 300px;
+  min-width: 200px;
+  min-height: 40px;
 
   border: none;
   border-radius: 4px;
@@ -46,22 +49,20 @@ const ButtonWrapper = styled.button`
   &:hover {
     outline: 0;
   }
+
   // 색상
-  ${props => 
-    props.className === 'white' && 
+  /* ${(props) =>
+    props.className === "white" &&
     css`
-    background-color  : white;
-    color: black;
-    `
-  }
-  ${props => 
-    props.className === 'black' && 
+      background-color: white;
+      color: black;
+    `}
+  ${(props) =>
+    props.className === "black" &&
     css`
-    background-color  : black;
-    color: white;
-    `
-  }
-  
+      background-color: black;
+      color: white;
+    `} */
 `;
 
-export default Button;
+// export default Button;
