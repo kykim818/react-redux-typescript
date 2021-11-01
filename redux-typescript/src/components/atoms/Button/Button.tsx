@@ -13,6 +13,7 @@ export const Button = (props: buttonProps) => {
       onClick={props.onClick}
       className={props.className}
       disabled={props.disabled}
+      type="button"
     >
       {props.children}
     </ButtonWrapper>

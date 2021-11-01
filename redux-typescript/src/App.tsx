@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <h1>Button</h1>
       <ButtonGroups>
-        <WhiteButton onClick={clickEvent}>White Button Components</WhiteButton>
+        <WhiteButton onClick={clickEvent}></WhiteButton>
         <BlackButton onClick={clickEvent}>Black Button Components</BlackButton>
         <Button onClick={clickEvent}>Normal Button Components</Button>
       </ButtonGroups>
